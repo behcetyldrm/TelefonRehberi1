@@ -26,7 +26,9 @@ import androidx.navigation.compose.rememberNavController
 import com.example.telefonrehberi.ui.theme.TelefonRehberiTheme
 import com.example.telefonrehberi.view.AnasayfaScreen
 import com.example.telefonrehberi.view.KisiEkleScreen
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
