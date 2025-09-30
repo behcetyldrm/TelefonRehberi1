@@ -23,10 +23,16 @@ class AnasayfaViewModel @Inject constructor(private val dao: RehberDao) : ViewMo
     var kisi_listesi by mutableStateOf<List<RehberModel>>(listOf())
 
     fun getAllData() {
-         viewModelScope.launch(Dispatchers.IO) { kisi_listesi = dao.getAllData() }
+         viewModelScope.launch(Dispatchers.IO) {
+             kisi_listesi = dao.getAllData()
+         }
     }
 
     fun deleteData(kisi: RehberModel) {
-        viewModelScope.launch (Dispatchers.IO){ dao.deleteData(kisi) }
+        viewModelScope.launch (Dispatchers.IO){
+            dao.deleteData(kisi)
+            getAllData()
+        }
+
     }
 }
